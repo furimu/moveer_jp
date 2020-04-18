@@ -212,19 +212,12 @@ async def join(ctx):
     perms.read_message_history = True
     perms.read_messages = True
     perms.send_messages = True
-    perms.send_tts_messages = True
-
-    perms.manage_roles = True
-    perms.manage_channels = True
-
     perms.embed_links = True
 
-    perms.add_reactions = True
-
+    perms.add_reaction = True    
     perms.kick_members = True
     
     perms.connect = True
-    perms.speak = True
     perms.move_members = True
     
     await ctx.send(f'<{utils.oauth_url(config.client_id, perms)}>')
