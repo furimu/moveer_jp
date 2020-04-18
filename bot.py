@@ -82,7 +82,7 @@ async def changema(ctx, channel: TextChannel = None):
     admin_channel[str(ctx.guild.id)]['テキストチャンネルのID'] = str(channel.id)
 
     save(admin_channel, 'admin_channel')
-    await ctx.send(f'{channel.name}で管理コマンドを送信できるようにしました')
+    await ctx.send(f'{channel.mention}で管理コマンドを送信できるようにしました')
 
 
 @bot.command()
