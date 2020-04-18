@@ -208,7 +208,7 @@ async def faq(ctx):
 @commands.command(aliases=['invite'])
 async def join(ctx):
     """Joins a server."""
-    perms = discord.Permissions.none()
+    perms = Permissions.none()
     perms.read_message_history = True
     perms.read_messages = True
     perms.send_messages = True
