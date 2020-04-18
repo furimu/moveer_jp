@@ -114,7 +114,7 @@ async def cmove(ctx, channel: VoiceChannel, users: commands.Greedy[Member] = Non
     if users is None:
         return await ctx.send('メンバーが指定されていません')
 
-    if ctx.channel.name != 'moveeradmin' or str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
+    elif ctx.channel.name != 'moveeradmin' or str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
     elif ctx.channel.name != 'moveeradmin' or st(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
