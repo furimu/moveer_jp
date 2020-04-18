@@ -1,5 +1,5 @@
 from discord.ext import commands
-from discord import Embed, Game, Activity, ActivityType, utils, TextChannel, VoiceChannel, CategoryChannel, Member, Role
+from discord import Embed, Game, Activity, ActivityType, utils, TextChannel, VoiceChannel, CategoryChannel, Member, Role, Permissions 
 import json
 import send_help
 import config
