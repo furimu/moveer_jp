@@ -94,10 +94,9 @@ async def move(ctx, users: commands.Greedy[Member] = None):
     if vc is None:
         return await ctx.send('**Moveer**というボイスチャンネルが見つかりませんでした')
 
-    elif ctx.channel.name != 'moveeradmin':
+    elif ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
-    elif str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']: 
-        return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
+   
     for member in users:
         if member.voice.channel is None:
             return await ctx.send(f'{member.name}はVCにいない為処理が停止しました')
