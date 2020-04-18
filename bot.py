@@ -112,9 +112,7 @@ async def cmove(ctx, channel: VoiceChannel, users: commands.Greedy[Member] = Non
     if users is None:
         return await ctx.send('メンバーが指定されていません')
 
-    elif ctx.channel.name != 'moveeradmin':
-        return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
-    elif str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']: 
+    elif ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
     for user in users:
@@ -128,9 +126,7 @@ async def fmove(ctx, channel: VoiceChannel, after_channel: VoiceChannel = None):
     if after_channel is None:
         return await ctx.send('チャンネルが指定されていません')
 
-    elif ctx.channel.name != 'moveeradmin':
-        return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
-    elif str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']: 
+    elif ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
     for member in channel.members:
@@ -144,9 +140,7 @@ async def rmove(ctx, role: Role):
     if ctx.author.voice.channel is None:
         return await ctx.send('貴方がボイスチャンネルに接続していない為このコマンドを実行できません')
 
-    elif ctx.channel.name != 'moveeradmin':
-        return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
-    elif str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']: 
+    elif ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
     for member in ctx.guild.members:
@@ -158,9 +152,7 @@ async def rmove(ctx, role: Role):
 
 @bot.command()
 async def tmove(ctx, channel: VoiceChannel, role: Role):
-    if ctx.channel.name != 'moveeradmin':
-        return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
-    elif str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']: 
+    if ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
 
