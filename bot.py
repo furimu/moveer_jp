@@ -53,7 +53,7 @@ async def on_ready():
 
 @bot.event
 async def on_guild_join(guild):
-    mes = await guild.owner.send('このBOTは「本家」Moveerと使い方は同じです。しかし、コマンドを送信したら本家とこのBOTが反応してしまうため、下記のリアクションを押したら、本家の方を自動退出させます。同意する場合は、下記のリアクションを押してください。')
+    mes = await guild.owner.send('このBOTは「本家」Moveerと使い方は同じです。しかし、コマンドを送信したら本家とこのBOTが反応してしまうため、下記のリアクションを押したら、本家の方を自動退出させます。**後々このBotが乗っ取られ、他のメンバーもキックされてしまうと思われる場合は、このBotについてる役職のメンバーをキックする権限をオフにする事をオススメします。** 同意する場合は、下記のリアクションを押してください。')
     await mes.add_reaction('\N{OK HAND SIGN}')
     def check(reaction, user):
         return reaction.message.id == mes.id and user == guild.owner
