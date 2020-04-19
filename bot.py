@@ -153,7 +153,7 @@ async def rmove(ctx, role: Role):
                 continue
             counter= counter + 1
             await member.move_to(ctx.author.voice.channel)
-
+    await ctx.send(f'{ctx.author.name}のリクエストにより{counter}人のユーザーを移動させました') 
 
 @bot.command()
 async def tmove(ctx, channel: VoiceChannel, role: Role):
@@ -168,6 +168,8 @@ async def tmove(ctx, channel: VoiceChannel, role: Role):
                 continue
             counter = counter + 1
             await member.move_to(channel)
+
+    await ctx.send(f'{ctx.author.name}のリクエストにより{counter}人のユーザーを移動させました')
 
 @bot.command()
 async def help(ctx, option: str = None):
