@@ -90,7 +90,7 @@ async def move(ctx, users: commands.Greedy[Member] = None):
     if users is None:
         return await ctx.send('メンバーが指定されていません')
 
-    vc = utils.get(guild.voice_channels, name='Moveer') 
+    vc = utils.get(ctx.guild.voice_channels, name='Moveer') 
     if vc is None:
         return await ctx.send('**Moveer**というボイスチャンネルが見つかりませんでした')
 
