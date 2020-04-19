@@ -149,7 +149,7 @@ async def rmove(ctx, role: Role):
     for member in ctx.guild.members:
         if role in member.roles:
             
-            if member.voice.channel is None:
+            if member.voice is None:
                 continue
             counter= counter + 1
             await member.move_to(ctx.author.voice.channel)
@@ -164,7 +164,7 @@ async def tmove(ctx, channel: VoiceChannel, role: Role):
     counter = 0
     for member in ctx.guild.members:
         if role in member.roles:
-            if member.voice.channel is None:
+            if member.voice is None:
                 continue
             counter = counter + 1
             await member.move_to(channel)
