@@ -129,10 +129,13 @@ async def fmove(ctx, channel: VoiceChannel, after_channel: VoiceChannel = None):
     elif ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
+    counter = 0
     for member in channel.members:
+        
+        counter = counter +1
         await member.move_to(after_channel)
 
-    await ctx.send(f'{ctx.author.name}のリクエストにより{len(users)}人のユーザーを移動させました')
+    await ctx.send(f'{ctx.author.name}のリクエストにより{counter}人のユーザーを移動させました')
 
 
 @bot.command()
