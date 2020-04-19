@@ -145,11 +145,13 @@ async def rmove(ctx, role: Role):
 
     elif ctx.channel.name != 'moveeradmin' and str(ctx.channel.id) != admin_channel[str(ctx.guild.id)]['テキストチャンネルのID']:
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
-
+    counter = 0
     for member in ctx.guild.members:
         if role in member.roles:
+            
             if member.voice.channel is None:
                 continue
+            counter= counter + 1
             await member.move_to(ctx.author.voice.channel)
 
 
@@ -159,10 +161,12 @@ async def tmove(ctx, channel: VoiceChannel, role: Role):
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
 
+    counter = counter + 1
     for member in ctx.guild.members:
         if role in member.roles:
             if member.voice.channel is None:
                 continue
+            counter = counter + 1
             await member.move_to(channel)
 
 @bot.command()
