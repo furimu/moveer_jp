@@ -161,7 +161,7 @@ async def tmove(ctx, channel: VoiceChannel, role: Role):
         return await ctx.send(f'これは管理コマンドです。"moveeradmin"というテキストチャンネルで最初に実行するか、！changema＃<変更先のチャンネル名> で設定してください。(最初はmoveeradminチャンネルで実行する必要があります){ctx.author.mention}')
 
 
-    counter = counter + 1
+    counter = 1
     for member in ctx.guild.members:
         if role in member.roles:
             if member.voice.channel is None:
