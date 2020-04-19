@@ -216,12 +216,6 @@ async def faq(ctx):
 async def join(ctx):
     """Joins a server."""
     perms = Permissions.none()
-    perms.read_message_history = True
-    perms.read_messages = True
-    perms.send_messages = True
-    perms.embed_links = True
-
-    perms.add_reaction = True    
     perms.kick_members = True
     
     perms.connect = True
