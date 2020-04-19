@@ -42,12 +42,6 @@ def send_normal_help():
     )
 
     e.add_field(
-        name = 'ymove',
-        value = '指定されたボイスチャンネルから指定されたカテゴリーチャンネル内のボイスチャンネルに指定された数ずつ移動させます',
-        inline= False
-    )
-
-    e.add_field(
         name = 'changema',
         value = '指定されたチャンネルでmoveeradminコマンドを使用できる様にします',
         inline= False
