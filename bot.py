@@ -212,7 +212,7 @@ async def faq(ctx):
     await ctx.send(embed = e)
 
 
-@commands.command(aliases=['invite'])
+@bot.command(aliases=['invite'])
 async def join(ctx):
     """Joins a server."""
     perms = Permissions.none()
