@@ -58,7 +58,7 @@ async def on_guild_join(guild):
     def check(reaction, user):
         return reaction.message.id == mes.id and user == guild.owner
 
-    reaction, user = await bot.wait_for('raw_reaction_add', check = check)
+    reaction, user = await bot.wait_for('reaction_add', check = check)
 
     if str(reaction.emoji) == '\N{OK HAND SIGN}':
         user = bot.get_user(400724460203802624)
